@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Bar do Ailtinho - Página Inicial{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <!-- left column -->
+        <div class="col-md-10">
+            <!-- general form elements -->
+            <div class="card card-outline card-primary">
+                <div class="card-header text-center">
+                    <h3 class="card-title">SEJAM BEM VINDOS!</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form method="post">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </div>
+                    <div class="card-footer text-center">
+                        <button type="submit" class="btn btn-dark m-1">Iniciar sessão</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

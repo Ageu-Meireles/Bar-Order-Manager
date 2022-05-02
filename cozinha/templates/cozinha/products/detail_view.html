@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ request.site.name }} - Perfil{% endblock %}
+
+{% block titlebody %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class=" col-md-10">
+        <div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title">Detalhes da Indicação</h3>
+                <a class="btn-sm btn-white float-right" href="{% url 'cozinha:produtos' %}">Voltar</a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body flex">
+                <div class="table-responsive">
+                    <!-- <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cargo anterior</th>
+                                <th>Novo cargo</th>
+                                <th>Indicado por</th>
+                                <th>Indicado em</th>
+                                {% if not object.promotion_status == '4' %}
+                                    <th>Avaliada por</th>
+                                    <th>Avaliada em</th>
+                                {% else %}
+                                    <th>Expirada em</th>
+                                {% endif %}
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ object.employee.name }}</td>
+                                <td>{{ object.previous_sub_title }}</td>
+                                <td>{{ object.new_sub_title }}</td>
+                                <td>{{ object.indicated_by.full_name }}</td>
+                                <td>{{ object.created_at }}</td>
+                                {% if not object.promotion_status == '4' %}
+                                    <td>{{ object.evaluated_by.full_name }}</td>
+                                {% endif %}
+                                <td>{{ object.updated_at }}</td>
+                                <td>{{ object.get_promotion_status_display }}</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+                {% if object.comment %}
+                    <label for="comment">Comentário da indicação:</label>
+                    <div id="comment" class="info-box bg-light">
+                        <div class="info-box-content m-1 responsible">
+                            <span class="info-box-text text-wrap mb-0">{{ object.comment }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if object.comment_reverse and not object.promotion_status == '4' %}
+                    <label for="comment-reverse">Comentário da avaliação:</label>
+                    <div id="comment-reverse" class="info-box bg-light">
+                        <div class="info-box-content">
+                            <span class="info-box-text text-wrap mb-0">{{ object.comment_reverse }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
