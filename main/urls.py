@@ -7,15 +7,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 urlpatterns = [
-    # administração do django
     path('admin/', admin.site.urls),
-    # autenticação de usuários
     path('accounts/', include('allauth.urls')),
     path("", include("pages.urls", namespace="pages")),
-    # aplicativo da cozinha
-    path('cozinha/', include('cozinha.urls')),  
-    # aplicativo dos clientes    # o método include() busca n
-    path('clientes/', include('clientes.urls')),
+    path('cozinha/', include('establishment.urls')),  
+    path('clientes/', include('customers.urls')),
 ]
 
 if settings.DEBUG:

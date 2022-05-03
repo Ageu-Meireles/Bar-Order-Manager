@@ -1,5 +1,5 @@
 from django.db import models
-from cozinha.models import Table
+from establishment.models import Table
 class Session(models.Model):
     client_name = models.CharField(verbose_name='Nome do cliente', max_length=200)
     table = models.ForeignKey(Table,verbose_name='Número da mesa do cliente', null=True, blank=True, on_delete=models.SET_NULL)

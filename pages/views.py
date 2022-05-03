@@ -22,4 +22,4 @@ class HomePageView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("cozinha:products")
+        return reverse("establishment:products")

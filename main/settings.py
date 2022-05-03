@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
-    # Apps internos do Django
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,13 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
 
-    # Apps internos
-    'clientes',
-    'cozinha',
-    'pages.apps.PagesConfig',
+    # Internal apps
     'accounts',
+    'customers',
+    'establishment',
+    'pages',
 
-    # Apps externos ou de terceiros
+    # Third-party apps
     "allauth",
     "allauth.account",
     "allauth.socialaccount",

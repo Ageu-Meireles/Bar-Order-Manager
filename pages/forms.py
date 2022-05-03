@@ -3,7 +3,7 @@ from pyexpat import model
 from django import forms
 from datetime import datetime
 from .models import Session
-from cozinha.models import Table
+from establishment.models import Table
 
 class SessionForm(forms.ModelForm):
     class Meta:
