@@ -1,5 +1,8 @@
 # Bar Order Manager 
 
+## Status
+Em desenvolvimento
+
 ## Descrição
 <p align="justify">Sistema de gerenciamento de pedidos para bares e/ou restaurantes.</p>
 
